@@ -5,6 +5,13 @@
      */
     $base_path = 'http://localhost/projects/ageframe/';
     echo 'Base path: '.$base_path.'<br/><br/>';
+    
+    /**
+     * Define default controller, action and parameters
+     */
+    $default_controller = 'default';
+    $default_action = 'index';
+    $default_parameters = array();
 
     /**
      * Get URL protocol
@@ -46,9 +53,13 @@
     /**
      * Determine controller, action and parameters from array
      */
-    $controller = $url[0];
-    $action = $url[1];
-    $parameters = array_slice($url, 2);
+    $controller = $default_controller;
+    $action = $default_action;
+    $parameters = $default_parameters;
+    
+    if($url[0] != '') { $controller = $url[0];
+    if($url[1] != '') { $action = $url[1];
+    if($url[2] != '') { $parameters = array_slice($url, 2); }}}
     
     echo 'Controller: '.$controller.'<br/>';
     echo 'Action: '.$action.'<br/>';
