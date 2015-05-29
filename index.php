@@ -71,19 +71,19 @@
     echo 'Action: '.$action.'<br/>';
     echo 'Parameters: ';
     print_r($parameters);
-    echo '<br/>';
+    echo '<br/><br/>';
     
     /**
      * Load controller
      */
-    $filename = $controller.'.php';
+    $filename = './controllers/'.$controller.'.php';
     
     if(!file_exists($filename)) {
         $controller = $error_controller;
         $action = $error_action;
         $parameters = $default_parameters;
         
-        $filename = $controller.'.php';
+        $filename = './controllers/'.$controller.'.php';
     }
     
     require_once $filename;
@@ -96,10 +96,10 @@
         $action = $error_action;
         $parameters = $default_parameters;
         
-        $filename = $controller.'.php';
+        $filename = './controllers/'.$controller.'.php';
         require_once $filename;
     }
     
     call_user_func_array($action, $parameters);
     
-/* End Of File > /index.php */
+/* End Of File > ./index.php */
