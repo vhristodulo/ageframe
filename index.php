@@ -12,6 +12,12 @@
     $default_controller = 'default';
     $default_action = 'index';
     $default_parameters = array();
+    
+    /**
+     * Define error controller and action
+     */
+    $error_controller = 'error';
+    $error_action = 'error';
 
     /**
      * Get URL protocol
@@ -66,5 +72,34 @@
     echo 'Parameters: ';
     print_r($parameters);
     echo '<br/>';
+    
+    /**
+     * Load controller
+     */
+    $filename = $controller.'.php';
+    
+    if(!file_exists($filename)) {
+        $controller = $error_controller;
+        $action = $error_action;
+        $parameters = $default_parameters;
+        
+        $filename = $controller.'.php';
+    }
+    
+    require_once $filename;
+    
+    /**
+     * Call action with parameters
+     */
+    if(!function_exists($action)) {
+        $controller = $error_controller;
+        $action = $error_action;
+        $parameters = $default_parameters;
+        
+        $filename = $controller.'.php';
+        require_once $filename;
+    }
+    
+    call_user_func_array($action, $parameters);
     
 /* End Of File > /index.php */
