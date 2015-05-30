@@ -1,6 +1,10 @@
 <?php
 
     /**
+     * CONFIG
+     */
+
+    /**
      * Define base path
      */
     $base_path = 'http://localhost/projects/ageframe/';
@@ -19,6 +23,10 @@
     $error_controller = 'error';
     $error_action = 'error';
 
+    /**
+     * ROUTER
+     */
+    
     /**
      * Get URL protocol
      */
@@ -72,6 +80,10 @@
     echo 'Parameters: ';
     print_r($parameters);
     echo '<br/><br/>';
+    
+    /**
+     * LOADER
+     */
     
     /**
      * Load controller
