@@ -1,10 +1,8 @@
 <?php
 
-    echo 'Controller '.$controller.' loaded<br/>';
-    
     function index() {
-        global $action;
-        echo 'Action '.$action.' called<br/>';
+        global $views_path;
+        require_once $views_path.'home.php';
     }
 
 /* End Of File > ./app/controllers/default.php */
