@@ -1,8 +1,10 @@
 <?php
 
+    require_once './core/controllers/base.php';
+
     function index() {
-        global $views_path;
-        require_once $views_path.'home.php';
+        $data['title'] = 'Home Page';
+        load_view('home', $data);
     }
 
 /* End Of File > ./app/controllers/default.php */
