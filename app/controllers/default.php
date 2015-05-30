@@ -3,7 +3,8 @@
     require_once './core/controllers/base.php';
 
     function index() {
-        $data['title'] = 'Home Page';
+        load_model('data');
+        $data = getData();
         load_view('home', $data);
     }
 
