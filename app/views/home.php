@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Home page</title>
+        <title><?php echo $title; ?></title>
     </head>
     <body>
-        <h1>Home page</h1>
+        <h1><?php echo $title; ?></h1>
     </body>
 </html>
