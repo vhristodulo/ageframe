@@ -7,4 +7,4 @@
         echo 'Action '.$action.' called<br/>';
     }
 
-/* End Of File > ./controllers/error.php */
+/* End Of File > ./app/controllers/error.php */
