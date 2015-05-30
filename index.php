@@ -16,6 +16,14 @@
     $base_path = 'http://localhost/projects/ageframe/';
 
     /**
+     * Define paths for application
+     */
+    $application_path = './app/';
+    //$models_path = $application_path.'models/';
+    //$views_path = $application_path.'views/';
+    $controllers_path = $application_path.'controllers/';
+    
+    /**
      * Define default controller, action and parameters
      */
     $default_controller = 'default';
@@ -74,14 +82,14 @@
     /**
      * Load controller
      */
-    $filename = './controllers/'.$controller.'.php';
+    $filename = $controllers_path.$controller.'.php';
 
     if(!file_exists($filename)) {
         $controller = $error_controller;
         $action = $error_action;
         $parameters = $default_parameters;
 
-        $filename = './controllers/'.$controller.'.php';
+        $filename = $controllers_path.$controller.'.php';
     }
 
     require_once $filename;
@@ -94,7 +102,7 @@
         $action = $error_action;
         $parameters = $default_parameters;
 
-        $filename = './controllers/'.$controller.'.php';
+        $filename = $controllers_path.$controller.'.php';
         require_once $filename;
     }
 
