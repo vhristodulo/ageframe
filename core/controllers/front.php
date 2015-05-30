@@ -19,7 +19,7 @@
      * Define paths for application
      */
     $application_path = './app/';
-    //$models_path = $application_path.'models/';
+    $models_path = $application_path.'models/';
     $views_path = $application_path.'views/';
     $controllers_path = $application_path.'controllers/';
     
