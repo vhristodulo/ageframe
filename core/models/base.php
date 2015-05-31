@@ -6,44 +6,44 @@
      */
 
     /**
-     * Define connection object
+     * Define database connection object
      */
-    $conn = NULL;
+    $db_conn = NULL;
 
     /**
      * Connect to database server
      * 
      * @global array $db
-     * @global object $conn
+     * @global object $db_conn
      */
     function db_connect() {
         global $db;
-        global $conn;
+        global $db_conn;
         
-        $conn = mysqli_connect($db['hostname'], $db['username'], $db['password'], $db['database']);
+        $db_conn = mysqli_connect($db['hostname'], $db['username'], $db['password'], $db['database']);
     }
     
     /**
      * Disconnect from database server
      * 
-     * @global object $conn
+     * @global object $db_conn
      */
     function db_disconnect() {
-        global $conn;
-        mysqli_close($conn);
+        global $db_conn;
+        mysqli_close($db_conn);
     }
     
     /**
      * Execute query and fetch result into array
      * 
-     * @global object $conn
+     * @global object $db_conn
      * @param string $query
      * @return array
      */
     function db_query($query) {
         db_connect();
-        global $conn;
-        $result = mysqli_query($conn, $query);
+        global $db_conn;
+        $result = mysqli_query($db_conn, $query);
         $data = array();
         while($row = mysqli_fetch_array($result)) $data[] = $row;
         db_disconnect();
