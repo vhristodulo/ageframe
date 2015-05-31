@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>AGEFRAME - PHP MVC Framework</title>
+    <title>AgeFrame - PHP MVC Framework</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="pub/css/bootstrap.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-fire"></i>  <span class="light">AGE</span>FRAME
+                    <i class="fa fa-fire"></i>  <span class="light">Age</span>Frame
                 </a>
             </div>
 
