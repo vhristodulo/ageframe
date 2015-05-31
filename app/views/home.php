@@ -9,8 +9,8 @@
         <title>AgeFrame - PHP MVC Framework</title>
 
         <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="pub/css/ageframe.css"/>
-        <link rel="stylesheet" type="text/css" href="pub/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $base_path; ?>pub/css/ageframe.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo $base_path; ?>pub/font-awesome/css/font-awesome.min.css"/>
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"/>
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700"/>
 
@@ -119,8 +119,8 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <script src="pub/js/jquery.easing.min.js"></script>
-        <script src="pub/js/ageframe.js"></script>
+        <script src="<?php echo $base_path; ?>pub/js/jquery.easing.min.js"></script>
+        <script src="<?php echo $base_path; ?>pub/js/ageframe.js"></script>
 
     </body>
 
