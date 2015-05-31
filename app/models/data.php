@@ -1,7 +1,10 @@
 <?php
 
+    require_once './core/models/base.php';
+
     function getData() {
-        $data['title'] = 'Home Page';
+        $ret_data = db_query('SELECT * FROM pages');
+        $data['title'] = $ret_data[0]['title'];
         return $data;
     }
 
