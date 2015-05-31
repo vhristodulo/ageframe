@@ -25,9 +25,9 @@
      * @param string $model
      * @param array $data
      */
-    function load_model($model, $data = array()) {
+    function load_model($model/*, $data = array()*/) {
         global $models_path;
-        foreach($data as $key => $value) ${$key} = $value;
+        //foreach($data as $key => $value) ${$key} = $value;
         require_once $models_path.$model.'.php';
     }
 
