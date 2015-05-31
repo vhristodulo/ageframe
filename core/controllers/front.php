@@ -11,6 +11,14 @@
      */
 
     /**
+     * Define database connection parameters
+     */
+    $db_hostname = 'localhost';
+    $db_username = 'root';
+    $db_password = 'root';
+    $db_database = 'test';
+
+    /**
      * Define base path
      */
     $base_path = 'http://localhost/projects/ageframe/';
