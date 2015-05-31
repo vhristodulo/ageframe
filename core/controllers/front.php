@@ -38,7 +38,8 @@
     /**
      * Remove base path from full path and split rest to array
      */
-    $path = str_replace($base_path, '', $full_path);
+    $path = strtr($full_path, [$base_path => '']);
+    //$path = str_replace($base_path, '', $full_path);
     $url = explode('/', $path);
 
     /**
@@ -48,9 +49,9 @@
     $action = $default_action;
     $parameters = $default_parameters;
 
-    if($url[0] != '') { $controller = $url[0];
-    if($url[1] != '') { $action = $url[1];
-    if($url[2] != '') { $parameters = array_slice($url, 2); }}}
+    if($url[0] !== '') { $controller = $url[0];
+    if($url[1] !== '') { $action = $url[1];
+    if($url[2] !== '') { $parameters = array_slice($url, 2); }}}
 
     /**
      * LOADER
