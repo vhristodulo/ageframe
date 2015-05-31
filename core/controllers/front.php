@@ -10,38 +10,14 @@
      */
 
     /**
-     * Define database connection parameters
+     * Load database configuration file
      */
-    $db_hostname = 'localhost';
-    $db_username = 'root';
-    $db_password = 'root';
-    $db_database = 'test';
+    require_once './app/config/db.php';
 
     /**
-     * Define base path
+     * Load application configuration file
      */
-    $base_path = 'http://localhost/projects/ageframe/';
-
-    /**
-     * Define paths for application
-     */
-    $application_path = './app/';
-    $models_path = $application_path.'models/';
-    $views_path = $application_path.'views/';
-    $controllers_path = $application_path.'controllers/';
-    
-    /**
-     * Define default controller, action and parameters
-     */
-    $default_controller = 'default';
-    $default_action = 'index';
-    $default_parameters = array();
-
-    /**
-     * Define error controller and action
-     */
-    $error_controller = 'error';
-    $error_action = 'error';
+    require_once './app/config/config.php';
 
     /**
      * ROUTER
@@ -75,12 +51,6 @@
     if($url[0] != '') { $controller = $url[0];
     if($url[1] != '') { $action = $url[1];
     if($url[2] != '') { $parameters = array_slice($url, 2); }}}
-
-    //echo 'Controller: '.$controller.'<br/>';
-    //echo 'Action: '.$action.'<br/>';
-    //echo 'Parameters: ';
-    //print_r($parameters);
-    //echo '<br/><br/>';
 
     /**
      * LOADER
