@@ -14,9 +14,7 @@
      * Default action
      */
     function index() {
-        load_model('data');
-        $data = getData();
-        load_view('home', $data);
+        load_view('home');
     }
 
 /* End Of File > ./app/controllers/default.php */
