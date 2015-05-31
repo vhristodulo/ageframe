@@ -8,9 +8,9 @@
     /**
      * Define database connection parameters
      */
-    $db_hostname = '';
-    $db_username = '';
-    $db_password = '';
-    $db_database = '';
+    $db['hostname'] = '';
+    $db['username'] = '';
+    $db['password'] = '';
+    $db['database'] = '';
 
 /* End Of File > ./app/config/db.php */
