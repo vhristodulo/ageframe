@@ -34,5 +34,6 @@
      */
     $error_controller = 'error';
     $error_action = 'error';
+    $rest = '';
 
 /* End Of File > ./app/config/app.php */
