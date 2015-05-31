@@ -8,9 +8,9 @@
     /**
      * Define database connection parameters
      */
-    $db_hostname = 'localhost';
-    $db_username = 'root';
-    $db_password = 'root';
-    $db_database = 'test';
+    $db_hostname = '';
+    $db_username = '';
+    $db_password = '';
+    $db_database = '';
 
 /* End Of File > ./app/config/db.php */
