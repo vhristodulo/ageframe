@@ -17,7 +17,7 @@
     /**
      * Load application configuration file
      */
-    require_once './app/config/config.php';
+    require_once './app/config/app.php';
 
     /**
      * ROUTER
