@@ -6,27 +6,21 @@
      */
 
     /**
-     * Define connection
+     * Define connection object
      */
     $conn = NULL;
 
     /**
      * Connect to database server
      * 
-     * @global string $db_hostname
-     * @global string $db_username
-     * @global string $db_password
-     * @global string $db_database
+     * @global array $db
      * @global object $conn
      */
     function db_connect() {
-        global $db_hostname;
-        global $db_username;
-        global $db_password;
-        global $db_database;
+        global $db;
         global $conn;
         
-        $conn = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);
+        $conn = mysqli_connect($db['hostname'], $db['username'], $db['password'], $db['database']);
     }
     
     /**
