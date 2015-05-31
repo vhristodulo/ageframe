@@ -38,20 +38,47 @@
     /**
      * Remove base path from full path and split rest to array
      */
-    $path = strtr($full_path, [$base_path => '']);
+    $route = strtr($full_path, [$base_path => '']);
     //$path = str_replace($base_path, '', $full_path);
-    $url = explode('/', $path);
+    
+    /**
+     * Determine route
+     */
+    if($route == '') $route = $routes['default'];
+    else {
+        foreach ($routes as $key => $value) {
+            if(preg_match('/:any/', $key)) {
+                $key = str_replace(':any', '.*', $key);
+                $new_key = str_replace('/', '\/', $key);
+                if(preg_match("/$new_key/", $route, $var)) {
+                    //$route = $value;
+                    $route = str_replace('$1', $var[1], $value);
+                    break;
+                }
+            }
+            else {
+                $new_key = str_replace('/', '\/', $key);
+                if(preg_match("/$new_key/", $route, $var)) {
+                    //$route = $value;
+                    $route = str_replace('$1', $var[1], $value);
+                    break;
+                }
+            }
+        }
+    }
+    
+    $url = explode('/', $route);
 
     /**
      * Determine controller, action and parameters from array
      */
-    $controller = $default_controller;
-    $action = $default_action;
-    $parameters = $default_parameters;
+    //$controller = $default_controller;
+    //$action = $default_action;
+    //$parameters = $default_parameters;
 
-    if($url[0] !== '') { $controller = $url[0];
-    if($url[1] !== '') { $action = $url[1];
-    if($url[2] !== '') { $parameters = array_slice($url, 2); }}}
+    /*if($url[0] !== '') {*/ $controller = $url[0];
+    /*if($url[1] !== '') {*/ $action = $url[1];
+    /*if($url[2] !== '') {*/ $parameters = array_slice($url, 2); /*}}}*/
 
     /**
      * LOADER
@@ -65,7 +92,7 @@
     if(!file_exists($filename)) {
         $controller = $error_controller;
         $action = $error_action;
-        $parameters = $default_parameters;
+        $parameters = array();
 
         $filename = $controllers_path.$controller.'.php';
     }
@@ -78,7 +105,7 @@
     if(!function_exists($action)) {
         $controller = $error_controller;
         $action = $error_action;
-        $parameters = $default_parameters;
+        $parameters = array();
 
         $filename = $controllers_path.$controller.'.php';
         require_once $filename;
