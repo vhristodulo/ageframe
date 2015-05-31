@@ -41,7 +41,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-fire"></i>  <span class="light">Age</span>Frame
+                    <i class="fa fa-square-o"></i>  <span class="light">Age</span>Frame
                 </a>
             </div>
 
