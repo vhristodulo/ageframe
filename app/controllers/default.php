@@ -14,6 +14,7 @@
      * Default action
      */
     function index() {
+        $data = '';
         load_view('home');
     }
 
