@@ -13,6 +13,7 @@
      * @param array $data
      */
     function load_view($view, $data = array()) {
+        global $base_path;
         global $views_path;
         foreach($data as $key => $value) ${$key} = $value;
         require_once $views_path.$view.'.php';
