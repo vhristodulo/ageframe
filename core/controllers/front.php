@@ -1,10 +1,9 @@
 <?php
 
-/**
- * 
- * Front Controller
- * 
- */
+    /**
+     * Front Controller
+     * 
+     */
 
     /**
      * CONFIG
