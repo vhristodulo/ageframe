@@ -38,47 +38,34 @@
     /**
      * Remove base path from full path and split rest to array
      */
-    $route = strtr($full_path, [$base_path => '']);
-    //$path = str_replace($base_path, '', $full_path);
+    $path = str_replace($base_path, '', $full_path);
     
     /**
      * Determine route
      */
-    if($route == '') $route = $routes['default'];
-    else {
-        foreach ($routes as $key => $value) {
-            if(preg_match('/:any/', $key)) {
-                $key = str_replace(':any', '.*', $key);
-                $new_key = str_replace('/', '\/', $key);
-                if(preg_match("/$new_key/", $route, $var)) {
-                    //$route = $value;
-                    $route = str_replace('$1', $var[1], $value);
-                    break;
-                }
-            }
-            else {
-                $new_key = str_replace('/', '\/', $key);
-                if(preg_match("/$new_key/", $route, $var)) {
-                    //$route = $value;
-                    $route = str_replace('$1', $var[1], $value);
-                    break;
-                }
+    if($route == '') $route = $routes[''];
+    else{
+        $routes_temp = array_slice($routes, 1);
+        foreach ($routes_temp as $key => $value) {
+            $key = str_replace(':any', '(.*)', $key);
+            $key = '/'.str_replace('/', '\/', $key).'/';
+            if(preg_match($key, $route)) {
+                $route = preg_replace($key, $value, $route);
+                break;
             }
         }
     }
     
     $url = explode('/', $route);
+    echo $route;
 
     /**
      * Determine controller, action and parameters from array
      */
-    //$controller = $default_controller;
-    //$action = $default_action;
-    //$parameters = $default_parameters;
 
-    /*if($url[0] !== '') {*/ $controller = $url[0];
-    /*if($url[1] !== '') {*/ $action = $url[1];
-    /*if($url[2] !== '') {*/ $parameters = array_slice($url, 2); /*}}}*/
+    $controller = $url[0];
+    if(isset($url[1]) && $url[1] !== '') $action = $url[1]; else $action = 'index';
+    $parameters = array_slice($url, 2);
 
     /**
      * LOADER
