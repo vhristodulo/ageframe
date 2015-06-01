@@ -57,7 +57,6 @@
     }
     
     $url = explode('/', $route);
-    echo $route;
 
     /**
      * Determine controller, action and parameters from array
