@@ -25,7 +25,8 @@
     /**
      * Define routes
      */
-    $routes['default'] = 'default/index';
+    $routes[''] = 'default/index';
+    $routes['pocetna/:any'] = 'default/index/$1';
     $routes['index.html'] = 'default/index';
 
     /**
